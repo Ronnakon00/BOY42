@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 23:52:24 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/12 23:19:09 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/13 10:34:48 by rthanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int ft_str_is_lowercase(char *str)
     return (1);
 }
 
-int main(){
-	int aws;
-	aws = ft_str_is_alpha("1234");
-	printf("%d",aws);
-}
+// int main(){
+// 	int aws;
+// 	aws = ft_str_is_alpha("1234");
+// 	printf("%d",aws);
+// }

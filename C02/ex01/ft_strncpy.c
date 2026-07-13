@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 22:53:21 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/09 23:51:41 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/13 10:34:00 by rthanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest++;
 		n--;
 	}
-	return (dest);
+	return (s);
 }
 
 // int main() {

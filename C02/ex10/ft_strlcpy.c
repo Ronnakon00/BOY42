@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 23:52:24 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/13 13:05:24 by rthanett         ###   ########.fr       */
+/*   Updated: 2026/07/13 12:07:26 by rthanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,36 +22,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
-char	*ft_strcapitalize(char *str)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	i;
+	unsigned int	src_len;
+	unsigned int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	src_len = 0;
+	while (src[src_len] != '\0')
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
-		i++;
+		src_len++;
+	}
+	if (size == 0)
+	{
+		return (src_len);
 	}
 	i = 0;
-	while (str[i] != '\0')
+	while (src[i] != '\0' && i < (size - 1))
 	{
-		if (i == 0 || (!(str[i - 1] >= 'a' && str[i - 1] <= 'z') && 
-		!(str[i - 1] >= 'A' && str[i - 1] <= 'Z') && 
-		!(str[i - 1] >= '0' && str[i - 1] <= '9')))
-		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-				str[i] -= 32;
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (str);
+	dest[i] = '\0';
+	return (src_len);
 }
 
 // int main(){
-// 	char aws[] = "HELLO"; 
-// 	ft_strcapitalize(aws);
-// 	printf("%s",aws);
+// 	char aws[] = "hello";
+// 	char adwds[10]; 
+// 	unsigned int len;
+// 	len = ft_strlcpy(adwds,aws,3);
+// 	printf("%d",len);
+// 	printf("%s",adwds);
 // }

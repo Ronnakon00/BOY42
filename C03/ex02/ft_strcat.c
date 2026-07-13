@@ -1,34 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/09 23:52:24 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/13 18:26:11 by rthanett         ###   ########.fr       */
+/*   Created: 2026/07/13 15:38:04 by rthanett          #+#    #+#             */
+/*   Updated: 2026/07/13 22:31:30 by rthanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char    *ft_strupcase(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
-    char *tmp;
-    tmp = str;
-    while (*str != '\0')
-    {
-        if(*str >= 'a' && *str <= 'z')
-        {
-            *str = *str - ('a' - 'A');
-        }
-        str++;
-    }
-    return (str);
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	return (dest);
 }
 
-// int main(){
-// 	char aws[] = "1234asdwfwf"; 
-// 	ft_strupcase(aws);
-// 	printf("%s",aws);
+// int main (void)
+// {
+//     char a[100] = "green";
+//     char b[] = "greenhouse";
+//     int x;
+//     ft_strcat(a,b);
+// 	int i;
+// 	i =0;
+// 	while(a[i] != '\0')
+// 	{
+// 		printf("%c",a[i]);
+// 		i++;
+// 	}
 // }

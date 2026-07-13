@@ -3,17 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 23:52:24 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/12 23:47:32 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/13 17:48:58 by rthanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char    *ft_strupcase(char *str)
+char    *ft_strlowcase(char *str)
 {
+    char *tmp;
+	
+	tmp = str;
     while (*str != '\0')
     {
         if(*str >= 'A' && *str <= 'Z')
@@ -22,11 +25,11 @@ char    *ft_strupcase(char *str)
         }
         str++;
     }
-    return (str);
+    return (tmp);
 }
 
-int main(){
-	char aws[] = "1234AOWDAO"; 
-	ft_strupcase(aws);
-	printf("%s",aws);
-}
+// int main(){
+// 	char aws[] = "1234AOWDAO"; 
+// 	ft_strupcase(aws);
+// 	printf("%s",aws);
+// }
