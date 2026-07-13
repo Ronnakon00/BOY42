@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/09 16:09:18 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/09 20:22:21 by ronny            ###   ########.fr       */
+/*   Created: 2026/07/09 20:33:43 by ronny             #+#    #+#             */
+/*   Updated: 2026/07/09 22:08:25 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
-{
-	int	i;
-	int	j;
-	int	tmp;
+#include <stdio.h>
 
-	i = 0;
-	while (i < size - 1)
+char	*ft_strcpy(char *dest, char *src)
+{
+	char	*s;
+
+	s = dest;
+	while (*src != '\0')
 	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (tab[i] > tab[j])
-			{
-				tmp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = tmp;
-			}
-			j++;
-		}
-		i++;
+		*dest = *src;
+		dest++;
+		src++;
 	}
+	*dest = '\0';
+	return (s);
 }
+
+// int main() {
+//     char source[] = "Hello, World!";
+//     char destination[50]; 
+//     ft_strcpy(destination, source);
+//     printf("Source: %s\n", source);
+//     printf("Destination: %s\n", destination);
+//     return 0;
+// }

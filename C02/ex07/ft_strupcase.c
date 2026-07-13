@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/09 16:09:18 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/09 20:22:21 by ronny            ###   ########.fr       */
+/*   Created: 2026/07/09 23:52:24 by ronny             #+#    #+#             */
+/*   Updated: 2026/07/12 23:39:16 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
-{
-	int	i;
-	int	j;
-	int	tmp;
+#include <stdio.h>
 
-	i = 0;
-	while (i < size - 1)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (tab[i] > tab[j])
-			{
-				tmp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = tmp;
-			}
-			j++;
-		}
-		i++;
-	}
+char    *ft_strupcase(char *str)
+{
+    while (*str != '\0')
+    {
+        if(*str >= 'a' && *str <= 'z')
+        {
+            *str = *str - ('a' - 'A');
+        }
+        str++;
+    }
+    return (str);
+}
+
+int main(){
+	char aws[] = "1234asdwfwf"; 
+	ft_strupcase(aws);
+	printf("%s",aws);
 }

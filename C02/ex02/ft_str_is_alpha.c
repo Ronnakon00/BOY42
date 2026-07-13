@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/09 16:09:18 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/09 20:22:21 by ronny            ###   ########.fr       */
+/*   Created: 2026/07/09 23:52:24 by ronny             #+#    #+#             */
+/*   Updated: 2026/07/12 23:05:56 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
-{
-	int	i;
-	int	j;
-	int	tmp;
+#include <stdio.h>
 
-	i = 0;
-	while (i < size - 1)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (tab[i] > tab[j])
-			{
-				tmp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = tmp;
-			}
-			j++;
-		}
-		i++;
-	}
+int ft_str_is_alpha(char *str)
+{
+    while (*str != '\0')
+    {
+        if (!((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')))
+        {
+            return (0);
+        }
+        str++;
+    }
+    return (1);
 }
+
+// int main(){
+// 	int aws;
+// 	aws = ft_str_is_alpha("");
+// 	printf("%d",aws);
+// }
