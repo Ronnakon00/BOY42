@@ -6,31 +6,27 @@
 /*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 15:38:04 by rthanett          #+#    #+#             */
-/*   Updated: 2026/07/14 16:14:29 by rthanett         ###   ########.fr       */
+/*   Updated: 2026/07/14 22:09:12 by rthanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 char	*ft_strcat(char *dest, char *src)
 {
-	int	i;
-	int	j;
+	char	*start;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
+	start = dest;
+	while (*dest != '\0')
 	{
-		i++;
+		dest++;
 	}
-	while (src[j] != '\0')
+	while (*src != '\0')
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		*dest = *src;
+		dest++;
+		src++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	*dest = '\0';
+	return (start);
 }
 
 // int main (void)

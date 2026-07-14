@@ -6,27 +6,22 @@
 /*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 15:38:04 by rthanett          #+#    #+#             */
-/*   Updated: 2026/07/14 16:10:40 by rthanett         ###   ########.fr       */
+/*   Updated: 2026/07/14 22:02:43 by rthanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (n != 0)
+	if (n == 0)
+		return (0);
+	while (i < n - 1 && s1[i] && s2[i] && s1[i] == s2[i])
 	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
 		i++;
-		n--;
 	}
-	return (0);
+	return (s1[i] - s2[i]);
 }
 
 // int main (void)
