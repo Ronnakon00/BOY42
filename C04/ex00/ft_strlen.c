@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/13 15:38:04 by rthanett          #+#    #+#             */
-/*   Updated: 2026/07/14 16:10:40 by rthanett         ###   ########.fr       */
+/*   Created: 2026/07/14 14:42:56 by rthanett          #+#    #+#             */
+/*   Updated: 2026/07/14 14:45:29 by rthanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strlen(char *str)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (n != 0)
+	len = 0;
+	while (*str != '\0')
 	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
-		i++;
-		n--;
+		len++;
+		*str++;
 	}
-	return (0);
+	return (len);
 }
-
-// int main (void)
-// {
-//     char a[] = "green";
-//     char b[] = "greenhouse";
-//     int x;
-//     ft_strcmp(a,b,6);
-//     printf("%d" ,x);
-// }

@@ -6,7 +6,7 @@
 /*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 15:38:04 by rthanett          #+#    #+#             */
-/*   Updated: 2026/07/13 22:31:30 by rthanett         ###   ########.fr       */
+/*   Updated: 2026/07/14 16:14:29 by rthanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*ft_strcat(char *dest, char *src)
 		i++;
 		j++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
 
