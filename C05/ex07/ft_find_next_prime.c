@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 16:54:01 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/16 19:05:38 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/16 20:10:28 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_sqrt(int nb)
+int ft_is_prime(int nb)
 {
-    int i;
-    if (nb <= 0)
-        return (0);
-    
-    i = 1;
-    while (i <= nb / 2)
-    {
-        if (i * i == nb)
-            return (i);
+	int i;
+
+	i = 2;
+	if (nb == 0 || nb == 1)
+		return (0);
+	while (i < nb)
+	{
+		if (nb % i == 0)
+			return (0);
         i++;
-    }
-    return (0);
+	}
+	return (1);
 }
 
-// int main()
-// {
-//     int x;
-//     x = ft_sqrt(144);
-//     printf("%d",x);
-// }
+int ft_find_next_prime(int nb)
+{
+    if (ft_is_prime(nb + 1) == 1)
+        return (nb + 1);
+    return (ft_find_next_prime(nb + 1));
+}
+
+int main()
+{
+    int x;
+    x = ft_find_next_prime(13);
+    printf("%d",x);
+}
