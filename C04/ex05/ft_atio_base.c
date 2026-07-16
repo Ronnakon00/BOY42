@@ -6,7 +6,7 @@
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 14:42:56 by rthanett          #+#    #+#             */
-/*   Updated: 2026/07/16 13:40:28 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/16 13:41:10 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	check_base(char *c)
 	return (len);
 }
 
-static int	get_base_index(char c, char *base)
+int	get_base_index(char c, char *base)
 {
 	int	i;
 
