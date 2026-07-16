@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 14:42:56 by rthanett          #+#    #+#             */
-/*   Updated: 2026/07/14 15:57:28 by rthanett         ###   ########.fr       */
+/*   Updated: 2026/07/16 12:15:49 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <unistd.h>
+
 void	ft_putnbr(int nb)
 {
-	char c;
+	char	c;
+
 	c = nb + '0';
-	write (1 ,&c, 10);
+	write (1, &c, 10);
 }

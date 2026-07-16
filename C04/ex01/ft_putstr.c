@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 14:42:56 by rthanett          #+#    #+#             */
-/*   Updated: 2026/07/14 14:55:30 by rthanett         ###   ########.fr       */
+/*   Updated: 2026/07/16 12:10:22 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <unistd.h>
+
 void	ft_putstr(char *str)
 {
 	char	c;
+
 	while (*str != '\0')
 	{
 		c = *str;

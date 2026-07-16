@@ -6,21 +6,21 @@
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 14:42:56 by rthanett          #+#    #+#             */
-/*   Updated: 2026/07/15 16:25:36 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/16 13:40:28 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-int check_base (char *c)
+int	check_base(char *c)
 {
-	int i;
-	int j;
-	int len;
-	
+	int	i;
+	int	j;
+	int	len;
+
 	i = 0;
 	len = 0;
-	while(c[i] != '\0')
+	while (c[i] != '\0')
 	{
 		if (c[i] == '+' || c[i] == '-' || c[i] == ' ')
 			return (0);
@@ -28,44 +28,63 @@ int check_base (char *c)
 		while (c[j] != '\0')
 		{
 			if (c[i] == c[j])
-				return(0);
+				return (0);
 			j++;
 		}
 		len++;
 		i++;
 	}
-	if(len == 1)
+	if (len == 1)
 		return (0);
 	return (len);
 }
 
-int	ft_atoi_base(char *str, char *base)
+static int	get_base_index(char c, char *base)
 {
-    int i;
-    int len;
-	int ne;
-	int result;
+	int	i;
 
-    len = check_base(base);
-	result = 0;
-	ne = 0;
 	i = 0;
-	while (!(str[i] >= '0' && str[i] <= '9'))
+	while (base[i] != '\0')
 	{
-		if(str[i] == '-')
-			ne++;
+		if (base[i] == c)
+			return (i);
 		i++;
 	}
-    
-    ne = ne / 2;
-	if(ne != 0)
-		return (result * -1);
-	return (result);
+	return (-1);
 }
 
-int main()
+int	ft_atoi_base(char *str, char *base)
 {
-    char c[] = "0123456789ABCDEF";
-    char c1[] = "hello";
-    ft_atio_base(c1,c);
+	int	i;
+	int	sign;
+	int	result;
+	int	base_len;
+
+	base_len = check_base(base);
+	i = 0;
+	sign = 1;
+	result = 0;
+	while (!((str[i] >= '0' && str[i] <= '9')
+			|| (str[i] >= 'A' && str[i] <= 'Z')
+			|| (str[i] >= 'a' && str[i] <= 'z')))
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] != '\0' && get_base_index(str[i], base) != -1)
+	{
+		result = (result * base_len) + get_base_index(str[i], base);
+		i++;
+	}
+	return (result * sign);
 }
+
+// int main()
+// {
+// 	int x;
+// 	char a[] = "  -1A";
+// 	char b[] = "0123456789ABCDEF";
+// 	x = ft_atoi_base(a,b);
+// 	printf("%d",x);
+// }

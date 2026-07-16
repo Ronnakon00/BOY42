@@ -6,21 +6,21 @@
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 14:42:56 by rthanett          #+#    #+#             */
-/*   Updated: 2026/07/15 15:39:47 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/16 12:14:42 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int check_base (char *c)
+int	check_base(char *c)
 {
-	int i;
-	int j;
-	int len;
-	
+	int	i;
+	int	j;
+	int	len;
+
 	i = 0;
 	len = 0;
-	while(c[i] != '\0')
+	while (c[i] != '\0')
 	{
 		if (c[i] == '+' || c[i] == '-' || c[i] == ' ')
 			return (0);
@@ -28,38 +28,38 @@ int check_base (char *c)
 		while (c[j] != '\0')
 		{
 			if (c[i] == c[j])
-				return(0);
+				return (0);
 			j++;
 		}
 		len++;
 		i++;
 	}
-	if(len == 1)
+	if (len == 1)
 		return (0);
 	return (len);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int b;
-	int nb;
-	
+	int	b;
+	int	nb;
+
 	b = check_base(base);
 	nb = nbr;
-    if (nb < 0)
-    {
-        write(1, "-", 1);
-        nb = -nb;
-    }
-    if (nb >= b)
-    {
-        ft_putnbr_base(nb / b, base); 
-    }
-    write(1, &base[nb % b], 1);
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb = -nb;
+	}
+	if (nb >= b)
+	{
+		ft_putnbr_base(nb / b, base);
+	}
+	write(1, &base[nb % b], 1);
 }
 
-int main()
-{
-    char c[] = "0123456789ABCDEF";
-    ft_putnbr_base(42,c);
-}
+// int main()
+// {
+//     char c[] = "0123456789ABCDEF";
+//     ft_putnbr_base(42,c);
+// }
