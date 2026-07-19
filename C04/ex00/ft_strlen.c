@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthanett <rthanett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 14:42:56 by rthanett          #+#    #+#             */
-/*   Updated: 2026/07/14 14:45:29 by rthanett         ###   ########.fr       */
+/*   Updated: 2026/07/20 00:01:01 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strlen(char *str)
 	while (*str != '\0')
 	{
 		len++;
-		*str++;
+		str++;
 	}
 	return (len);
 }

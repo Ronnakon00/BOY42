@@ -6,7 +6,7 @@
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 14:42:56 by rthanett          #+#    #+#             */
-/*   Updated: 2026/07/16 12:15:49 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/20 00:01:42 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,28 @@
 
 void	ft_putnbr(int nb)
 {
-	char	c;
+	char	digit;
 
-	c = nb + '0';
-	write (1, &c, 10);
+	if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb = nb * -1;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+	}
+	digit = (nb % 10) + '0';
+	write(1, &digit, 1);
 }
+
+// int main()
+// {
+// 	int s = 10;
+// 	ft_putnbr(s);
+// }
