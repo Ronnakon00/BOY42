@@ -6,12 +6,12 @@
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 15:45:13 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/22 15:45:15 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/22 16:25:10 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
+//#include <stdio.h>
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -81,3 +81,17 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	*ptr = '\0';
 	return (dest);
 }
+
+// int	main(void)
+// {
+// 	char	*strs[] = {"Hello", "42", "Bangkok", "Network"};
+// 	char	*sep = ", ";
+// 	char	*res;
+// 	res = ft_strjoin(4, strs, sep);
+// 	printf("Result: \"%s\"\n", res);
+// 	free(res);
+// 	res = ft_strjoin(1, strs, sep);
+// 	printf("Size 0 Result: \"%s\"\n", res);
+// 	free(res);
+// 	return (0);
+// }

@@ -6,12 +6,12 @@
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 11:56:21 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/20 11:56:56 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/22 16:30:12 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
+//#include <stdio.h>
 int		check_base(char *base);
 char	*ft_itoa_base(long n, char *base, int base_len);
 
@@ -71,3 +71,15 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	num = ft_atoi_base(nbr, base_from, b_from_len);
 	return (ft_itoa_base(num, base_to, b_to_len));
 }
+
+// int	main(void)
+// {
+// 	char	*res;
+// 	res = ft_convert_base("10", "0123456789", "01");
+// 	printf("Test 1: %s\n", res);
+// 	free(res);
+// 	res = ft_convert_base("   ---255", "0123456789", "0123456789abcdef");
+// 	printf("Test 2: %s\n", res);
+// 	free(res);
+// 	return (0);
+// }

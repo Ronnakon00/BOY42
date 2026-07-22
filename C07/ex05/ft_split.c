@@ -6,12 +6,12 @@
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 15:30:49 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/22 15:52:45 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/22 16:31:30 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
+//#include <stdio.h>
 int	is_sep(char c, char *charset)
 {
 	int	i;
@@ -93,3 +93,23 @@ char	**ft_split(char *str, char *charset)
 	result[j] = NULL;
 	return (result);
 }
+
+// int	main(void)
+// {
+// 	char	*str = "Hello, world!! Welcome to 42 Network";
+// 	char	*charset = ",! ";
+// 	char	**res;
+// 	int		i;
+// 	res = ft_split(str, charset);
+// 	if (!res)
+// 		return (0);
+// 	i = 0;
+// 	while (res[i] != NULL)
+// 	{
+// 		printf("res[%d]: %s\n", i, res[i]);
+// 		free(res[i]);
+// 		i++;
+// 	}
+// 	free(res);
+// 	return (0);
+// }

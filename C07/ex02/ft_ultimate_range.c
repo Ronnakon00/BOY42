@@ -6,12 +6,12 @@
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 03:45:08 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/22 15:52:25 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/22 16:25:14 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
+//#include <stdio.h>
 int	check_and_len(int min, int max)
 {
 	int	count;
@@ -54,3 +54,33 @@ int	ft_ultimate_range(int **range, int min, int max)
 	*range = dest;
 	return (size);
 }
+
+// int	main(void)
+// {
+// 	int	*range;
+// 	int	min = 3;
+// 	int	max = 7;
+// 	int	size;
+// 	int	i;
+
+// 	size = ft_ultimate_range(&range, min, max);
+// 	printf("Returned size: %d\n", size);
+
+// 	if (size <= 0 || !range)
+// 	{
+// 		printf("Range is NULL or empty\n");
+// 		return (0);
+// 	}
+
+// 	printf("Elements: ");
+// 	i = 0;
+// 	while (i < size)
+// 	{
+// 		printf("%d ", range[i]);
+// 		i++;
+// 	}
+// 	printf("\n");
+
+// 	free(range);
+// 	return (0);
+// }

@@ -6,12 +6,12 @@
 /*   By: ronny <ronny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 02:02:10 by ronny             #+#    #+#             */
-/*   Updated: 2026/07/22 15:44:51 by ronny            ###   ########.fr       */
+/*   Updated: 2026/07/22 16:25:20 by ronny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
+//#include <stdio.h>
 int	check_and_len(int min, int max)
 {
 	int	count;
@@ -51,3 +51,19 @@ int	*ft_range(int min, int max)
 	}
 	return (dest);
 }
+
+// int	main(void)
+// {
+// 	int	*res;
+// 	int	i;
+// 	res = ft_range(-3, 5);
+// 	i = 0;
+// 	while (i < (-3 - 5))
+// 	{
+// 		printf("%d ", res[i]);
+// 		i++;
+// 	}
+// 	printf("\n");
+// 	free(res);
+// 	return (0);
+// }
